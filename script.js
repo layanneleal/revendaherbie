@@ -1,3 +1,4 @@
+
 let carros = [] //Declara array global
 
 function adicionarCarros() {
@@ -23,6 +24,7 @@ function adicionarCarros() {
 
   listarCarros() //Chama function que lista os carros
 }
+
 let btAdicionar = document.getElementById('btAdicionar')
 btAdicionar.addEventListener('click', adicionarCarros)
 
@@ -41,6 +43,7 @@ function listarCarros() {
   //Referencia elemento e altera conteúdo exibido
   document.getElementById('outLista').textContent=lista
 }
+
 let btListar = document.getElementById('btListar')
 btListar.addEventListener('click', listarCarros)
 
@@ -62,13 +65,15 @@ function filtrarCarros() {
       lista += carros[i].modelo + ' R$: ' + carros[i].preco.toFixed(2) + '\n'
     }
   }
-  //Cria referência a outLista
-  let outLista = document.getElementById('outLista')
+  //Cria referência a outListaFiltro
+  let outListaFiltro = document.getElementById('outListaFiltro')
+  let valorFiltro = maximo.toFixed(2)
 
   if (lista == '') {
-    outLista.textContent = 'Não há carros com preço até R$ ' + maximo.toFixed(2)
+    outListaFiltro.textContent = 'Não há carros com preço até R$ ' + valorFiltro
   }else{
-    outLista.textContent = 'Carros até R$ ' + carros.toFixed(2) + '\n---------------------' + lista
+    outListaFiltro.textContent = '\n---------------------\n' 
+    outListaFiltro.textContent += 'Carros até R$ ' + valorFiltro + '\n---------------------\n' + lista 
   }
 }
 let btFiltrar = document.getElementById('btFiltrar')

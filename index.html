@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,27 +11,42 @@
       float: left;
       margin-right: 5%;
     }
-    h1 { 
+
+    .box {
+      float: left;
+      margin-left: 20px;
+      min-height: 400px;
+      width: 50%;
+    }
+
+    h1 {
       border-bottom-style: inset;
     }
-    pre { 
-      font-size: 1.2em; 
+
+    pre {
+      font-size: 1.2em;
     }
   </style>
 </head>
+
 <body>
   <img src="fusca.png" alt="Fusca pink">
-  <h1>Revenda Herbie</h1>
-  <p>Modelo:
-    <input type="text" id="inModelo" autofocus>
-  </p>
-  <p>Preço R$: 
-    <input type="text" id="inPreco">
-    <input type="button" value="Adicionar" id="btAdicionar">
-  </p>
+  <div class="box">
+    <h1>Revenda Herbie</h1>
+    <p>Modelo:
+      <input type="text" id="inModelo" autofocus onkeypress="this.value=this.value.toUpperCase()"
+        onblur="this.value=this.value.toUpperCase()">
+    </p>
+    <p>Preço R$:
+      <input type="text" id="inPreco">
+      <input type="button" value="Adicionar" id="btAdicionar">
+    </p>
     <input type="button" value="Listar todos" id="btListar">
     <input type="button" value="Filtrar por preço" id="btFiltrar">
-  <pre id="outLista"></pre>
+    <pre id="outLista"></pre>
+    <pre id="outListaFiltro"></pre>
+  </div>
   <script src="script.js"></script>
 </body>
+
 </html>
